@@ -1,0 +1,5 @@
+const GATEWAY_MAX_DEVICES_QUOTA = 10;
+
+module.exports = {
+    GATEWAY_MAX_DEVICES_QUOTA
+}
