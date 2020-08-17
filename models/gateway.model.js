@@ -42,14 +42,15 @@ gatewaySchema.statics.addDevice = async (gatewayId, deviceId) => {
     throw new Error('Device already exist in this gateway') 
   }
 
-  let currentGatewayDevices = [...gateway.devices, deviceId]
-
-  if(currentGatewayDevices.length === config.GATEWAY_MAX_DEVICES_QUOTA) {
+  
+  if(gateway.devices.length === config.GATEWAY_MAX_DEVICES_QUOTA) {
     throw new Error(`Gateway device quota reaced! No more than ${config.GATEWAY_MAX_DEVICES_QUOTA} are allowed!`)
   }
+  
+  let updatedDeviceList = [...gateway.devices, deviceId]
 
   try {
-    gateway.devices = currentGatewayDevices
+    gateway.devices = updatedDeviceList
     await gateway.save();
 
   } catch (e) {
