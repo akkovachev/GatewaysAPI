@@ -18,4 +18,4 @@ Navigate to GatewayAPI dir:
 
 That's it!
 If everything went well the project should start at http://localhost:3000
-To checkout the available REST Endpoints navigate to http://localhost:3000/api-docs
+To see the available REST Endpoints navigate to http://localhost:3000/api-docs
